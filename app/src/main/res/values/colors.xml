@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主题-->
+    <color name="colorTheme">#336EFD</color>
+    <color name="colorAccent">#00000000</color>
+    <color name="colorPrimary">#00000000</color>
+    <color name="colorPrimaryDark">@color/colorTheme</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">@color/colorTheme</color>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--start  日历-->
+    <dimen name="week_bar_height">36dp</dimen>
+    <dimen name="week_calendar_height">54dp</dimen>
+    <dimen name="magin_bottom">10dp</dimen>
+    <dimen name="month_calendar_height">324dp</dimen>
+    <dimen name="calendar_min_distance">5dp</dimen>
+    <dimen name="auto_scroll_distance">15dp</dimen>
+    <integer name="calendar_text_size">15</integer>
+    <!--end  日历-->
+</resources>

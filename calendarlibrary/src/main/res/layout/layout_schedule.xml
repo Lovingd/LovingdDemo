@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignWithParentIfMissing="true"
+    android:background="@color/background_color"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_schedule_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#3A3F52"
+            android:textSize="16sp"
+            tools:text="TextView" />
+
+        <ImageView
+            android:id="@+id/img_schedule_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="21dp"
+            android:layout_toLeftOf="@+id/tv_schedule_time"
+            android:layout_toStartOf="@+id/tv_schedule_time"
+            android:padding="10dp"
+            android:src="@drawable/img_schedule_month_right" />
+
+        <ImageView
+            android:id="@+id/img_schedule_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="21dp"
+            android:layout_toEndOf="@+id/tv_schedule_time"
+            android:layout_toRightOf="@+id/tv_schedule_time"
+            android:padding="10dp"
+            android:src="@drawable/img_schedule_month_left"
+            android:text="Button" />
+
+
+        <ImageView
+            android:id="@+id/img_schedule_week_or_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:padding="10dp"
+            android:src="@drawable/img_schedule_down" />
+    </RelativeLayout>
+
+    <com.muzi.lovingd.calendar.WeekBarView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/week_bar_height"
+        android:background="#FFFFFF"
+        app:week_text_color="#BFC4CF"
+        app:week_text_size="@integer/calendar_text_size" />
+
+
+    <com.muzi.lovingd.calendar.schedule.ScheduleLayout
+        android:id="@+id/slSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:auto_change_month_row="true"
+        app:default_view="week">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/rlMonthCalendar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <com.muzi.lovingd.calendar.month.MonthCalendarView
+                    android:id="@+id/mcvCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/month_calendar_height"
+                    android:background="#FFFFFF"
+                    android:overScrollMode="never"
+                    app:month_day_text_size="@integer/calendar_text_size"
+                    app:month_holiday_color="#3A3F52"
+                    app:month_last_or_next_month_text_color="#BFC4CF"
+                    app:month_normal_text_color="#3A3F52"
+                    app:month_selected_circle_color="#336EFD"
+                    app:month_show_holiday_hint="true"
+                    app:month_show_lunar="true"
+                    app:month_show_task_hint="true" />
+                <!--</RelativeLayout>-->
+
+                <com.muzi.lovingd.calendar.week.WeekCalendarView
+                    android:id="@+id/wcvCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/week_calendar_height"
+                    android:background="#FFFFFF"
+                    android:overScrollMode="never"
+                    android:visibility="gone"
+                    app:week_day_text_size="@integer/calendar_text_size"
+                    app:week_holiday_color="#3A3F52"
+                    app:week_normal_text_color="#3A3F52"
+                    app:week_selected_circle_color="#336EFD"
+                    app:week_show_holiday_hint="true"
+                    app:week_show_lunar="true"
+                    app:week_show_task_hint="true" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlScheduleList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color">
+
+
+                <TextView
+                    android:id="@+id/tv_schedule_all_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:gravity="center|left"
+                    android:paddingLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:text="我的日程(0)"
+                    android:textColor="#707484"
+                    android:textSize="14sp" />
+
+                <com.muzi.lovingd.calendar.schedule.ScheduleRecyclerView
+                    android:id="@+id/rvScheduleList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/tv_schedule_all_count"
+                    android:layout_marginTop="0.5dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:overScrollMode="never" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </com.muzi.lovingd.calendar.schedule.ScheduleLayout>
+
+</LinearLayout>
